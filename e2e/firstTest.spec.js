@@ -2,10 +2,10 @@ const { reloadApp } = require('detox-expo-helpers');
 
 describe('Example', () => {
   beforeEach(async () => {
-    await device.reloadApp();
+    await reloadApp();
   });
 
   it('should have welcome screen', async () => {
-    await expect(element(by.id('welcome'))).toBeVisible();
+    await expect(element(by.id('firstScreen'))).toBeVisible();
   });
 });
