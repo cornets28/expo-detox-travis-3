@@ -2,6 +2,7 @@ const detox = require('detox');
 const config = require('../package.json').detox;
 const adapter = require('detox/runners/jest/adapter');
 const specReporter = require('detox/runners/jest/specReporter');
+const { reloadApp } = require("detox-expo-helpers");
 
 // Set the default timeout
 jest.setTimeout(120000);
@@ -18,7 +19,9 @@ beforeAll(async () => {
 
 beforeEach(async () => {
   await adapter.beforeEach();
+  await reloadApp();
 });
+
 
 afterAll(async () => {
   await adapter.afterAll();
